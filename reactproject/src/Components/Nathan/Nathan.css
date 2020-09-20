@@ -15,7 +15,8 @@
   }
   
   .App-header {
-    background-color: #282c34;
+    background: rgb(140,92,190);
+    background: radial-gradient(circle, rgba(140,92,190,1) 0%, rgba(3,35,128,1) 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -26,7 +27,7 @@
   }
   
   .clicker-button{
-    background-color: #282c34;
+    background-color: #282c3400;
     outline: none;
     border: none;
   }
