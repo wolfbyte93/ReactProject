@@ -4,7 +4,7 @@ import { Row, Col, Container } from 'react-bootstrap'
 
 function Stats(props) {
     return (
-      <div>STATS WILL BE HERE</div>
+      <div>STATS WILL BE HERE I THINK</div>
     );
 }
 export default Stats;

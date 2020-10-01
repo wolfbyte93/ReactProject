@@ -8,14 +8,9 @@
   border-radius: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 30s linear;
-  }
-}
-
 .App-header {
-  background-color: #f54601;
+  background: rgb(140,92,190);
+  background: radial-gradient(circle, rgba(140,92,190,1) 0%, rgba(3,35,128,1) 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
