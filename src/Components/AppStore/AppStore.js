@@ -51,6 +51,4 @@ function AppStore(props) {
     </ScrollyBar>
   );
 }
-
-
 export default AppStore;

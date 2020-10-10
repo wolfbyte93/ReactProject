@@ -3,8 +3,10 @@ import './App.css';
 import Nathan from './Components/Nathan'
 import AppStore from './Components/AppStore'
 import Stats from './Components/Stats'
+import Upgrades from './Components/Upgrades'
+import upgradesData from './Data/upgrades.json'
 import { Row, Col, Container } from 'react-bootstrap'
-import dict from './items.json'
+import dict from './Data/items.json'
 
 const refreshRate = 100;
 
@@ -20,6 +22,7 @@ function App() {
     setActCps(actualCps + cpsIncrease);
     dict[itemId].amount += 1;
     console.log(dict);
+    
   }
 
   useEffect(() => {
@@ -40,6 +43,7 @@ function App() {
           <Row>
             <Col>
               <AppStore count={count} buyItem={(price, cpsIncrease, itemId) => buyAThing(price, cpsIncrease, itemId)} dict={dict}></AppStore>
+              <Upgrades count={count} dict={dict} upgrades={upgradesData}></Upgrades>
             </Col>
             <Col>
               <Nathan clickEvent={() => setCount(count => count + ClickNum)} roundedCount={roundedCount} count={count} actualCps={actualCps}></Nathan>
@@ -53,7 +57,6 @@ function App() {
     </div>
   );
 }
-
 export default App;
 
 

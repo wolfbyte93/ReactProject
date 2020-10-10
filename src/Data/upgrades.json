@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Chalky Hands",
+        "itemId": 1,
+        "require": 10,
+        "muliplyer": 2,
+        "cost": 10000,
+        "owned": false
+    },
+    {
+        "name": "Chalk Balls",
+        "itemId": 1,
+        "require": 25,
+        "muliplyer": 2,
+        "cost": 10000,
+        "owned": false
+    },
+    {
+        "name": "Phish food",
+        "itemId": 2,
+        "require": 10,
+        "muliplyer": 2,
+        "cost": 10000,
+        "owned": false
+    },
+    {
+        "name": "Strawberry lube",
+        "itemId": 3,
+        "require": 10,
+        "muliplyer": 2,
+        "cost": 10000,
+        "owned": false
+    }
+]
