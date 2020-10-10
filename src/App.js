@@ -4,6 +4,7 @@ import Nathan from './Components/Nathan'
 import AppStore from './Components/AppStore'
 import Stats from './Components/Stats'
 import { Row, Col, Container } from 'react-bootstrap'
+import dict from './items.json'
 
 const refreshRate = 100;
 
@@ -14,22 +15,12 @@ function App() {
   const [actualCps, setActCps] = useState(1);
 
 
-  function buyAThing(price, cpsIncrease) {
+  function buyAThing(price, cpsIncrease, itemId) {
     setCount(count - price);
     setActCps(actualCps + cpsIncrease);
+    dict[itemId].amount += 1;
+    console.log(dict);
   }
-
-  // const innerFunction = useCallback(() => {
-  //   const inter = setInterval(() => {
-  //     setCount(count => count + actualCps);
-  //   }, 5000)
-  //   return () => clearInterval(inter);
-  // },[actualCps]);
-
-  // useEffect(() => {
-  //     innerFunction();
-  //     return () => clearInnerFunction(innerFunction);
-  // }, [innerFunction]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -48,13 +39,13 @@ function App() {
         <Container fluid>
           <Row>
             <Col>
-              <AppStore count={count} buyItem={(price, cpsIncrease) => buyAThing(price, cpsIncrease)}></AppStore>
+              <AppStore count={count} buyItem={(price, cpsIncrease, itemId) => buyAThing(price, cpsIncrease, itemId)} dict={dict}></AppStore>
             </Col>
             <Col>
               <Nathan clickEvent={() => setCount(count => count + ClickNum)} roundedCount={roundedCount} count={count} actualCps={actualCps}></Nathan>
             </Col>
             <Col>
-              <Stats count={count} ></Stats>
+              <Stats count={count} dict={dict}></Stats>
             </Col>
           </Row>
         </Container>

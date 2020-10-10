@@ -8,12 +8,12 @@ const ScrollyBar = styled.div`
 
 function AppStore(props) {
 
-  function getButton(price, cpsIncrease) {
+  function getButton(price, cpsIncrease, itemId) {
     if (props.count < price) {
       return <Button disabled>Buy</Button>
     }
     else {
-      return <Button onClick={() => props.buyItem(price, cpsIncrease)}>Buy</Button>
+      return <Button onClick={() => props.buyItem(price, cpsIncrease, itemId)}>Buy</Button>
     }
   }
 
@@ -22,28 +22,28 @@ function AppStore(props) {
       <h1>Store Page</h1>
       {/*Change to call func that returns rows */}
       <Row >
-        <Col>Bag of Chalk</Col>
-        <Col>Cost: 5
+        <Col>{props.dict["1"].Name}</Col>
+        <Col>Cost: {props.dict["1"].amount * 5}
           <div>
-            {getButton(5, 1)}
+            {getButton(props.dict["1"].amount * 5, 1, "1")}
           </div>
         </Col>
         <Col>Lines of code incread +1</Col>
       </Row>
       <Row >
-        <Col>Ben and jerry's tub</Col>
-        <Col>Cost: 15
+        <Col>{props.dict["2"].Name}</Col>
+        <Col>Cost: {props.dict["2"].amount * 15}
         <div>
-            {getButton(15, 3)}
+          {getButton(props.dict["2"].amount * 15, 1, "2")}
         </div>
         </Col>
         <Col>Lines of code incread +3</Col>
       </Row>
       <Row >
-        <Col>Backrub from Dan</Col>
-        <Col>Cost: 50
+        <Col>{props.dict["3"].Name}</Col>
+        <Col>Cost: {props.dict["3"].amount * 50}
         <div>
-            {getButton(50, 5)}
+          {getButton(props.dict["3"].amount * 50, 1, "3")}
         </div>
         </Col>
         <Col>Lines of code incread +5</Col>
